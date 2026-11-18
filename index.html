@@ -164,15 +164,16 @@ iframe {
 }
 
 .gallery img {
-  flex: 0 0 180px;
-  width: 180px;
-  height: 180px;
+  flex: 0 0 220px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 18px;
   border: 4px solid #fff0d6;
   box-shadow: 0 5px 15px rgba(84,45,112,0.22);
   scroll-snap-align: center;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery img:hover {
@@ -202,9 +203,9 @@ iframe {
   }
 
   .gallery img {
-    flex-basis: 135px;
-    width: 135px;
-    height: 135px;
+    flex-basis: 165px;
+    width: 165px;
+    height: 165px;
   }
 
   .gallery-arrow {
@@ -360,6 +361,35 @@ footer p {
     font-size: 1.7em;
   }
 }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(20, 10, 30, 0.92);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.25);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
 </style>
 </head>
 
@@ -436,21 +466,25 @@ footer p {
     </button>
 
     <div class="gallery" id="photoGallery">
-      <img src="elpiniki1.JPEG" alt="Ελπινίκη 1">
-      <img src="elpiniki2.JPEG" alt="Ελπινίκη 2">
-      <img src="elpiniki3.JPEG" alt="Ελπινίκη 3">
-      <img src="elpiniki4.JPEG" alt="Ελπινίκη 4">
-      <img src="elpiniki5.JPEG" alt="Ελπινίκη 5">
-      <img src="elpiniki6.JPEG" alt="Ελπινίκη 6">
-      <img src="elpiniki7.JPEG" alt="Ελπινίκη 7">
-      <img src="elpiniki8.JPEG" alt="Ελπινίκη 8">
-      <img src="elpiniki9.JPEG" alt="Ελπινίκη 9">
+      <img src="elpiniki4.JPEG" alt="Ελπινίκη 1">
+      <img src="elpiniki5.JPEG" alt="Ελπινίκη 2">
+      <img src="elpiniki6.JPEG" alt="Ελπινίκη 3">
+      <img src="elpiniki9.JPEG" alt="Ελπινίκη 4">
+      <img src="elpiniki1.JPEG" alt="Ελπινίκη 5">
+      <img src="elpiniki2.JPEG" alt="Ελπινίκη 6">
+      <img src="elpiniki3.JPEG" alt="Ελπινίκη 7">
+      <img src="elpiniki7.JPEG" alt="Ελπινίκη 8">
+      <img src="elpiniki8.JPEG" alt="Ελπινίκη 9">
     </div>
 
     <button class="gallery-arrow" onclick="moveGallery(1)" aria-label="Επόμενες φωτογραφίες">
       &#10095;
     </button>
   </div>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImage" src="" alt="Μεγεθυμένη φωτογραφία">
+</div>
 </section>
 
 <footer>
@@ -563,6 +597,30 @@ function moveGallery(direction) {
   });
 }
 
+// Άνοιγμα μεγεθυμένης φωτογραφίας
+document.querySelectorAll('#photoGallery img').forEach(img => {
+  img.addEventListener('click', function(event) {
+    event.stopPropagation();
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    lightboxImage.src = this.src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+// Κλείσιμο με κλικ
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+// Κλείσιμο με Escape
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});
 </script>
 
 </body>
