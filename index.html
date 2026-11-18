@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Τα δεύτερα γενέθλια της Ελπινίκης - Ραπουνζέλ</title>
+
+<meta name="description" content="Η Ελπινίκη γίνεται 2 χρονών! Σας προσκαλούμε σε ένα μαγικό πάρτι με θέμα τη Ραπουνζέλ, την Κυριακή 22 Νοεμβρίου 2026 στις 11:00, στο Adamo Cafe.">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Serif', Georgia, serif;
+  background: linear-gradient(to bottom, #fff0d6, #e7c5f5, #8b55a6);
+  color: #542d70;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  padding: 70px 20px 45px;
+  position: relative;
+}
+
+header img {
+  display: block;
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  margin: 0 auto 30px;
+  border-radius: 25px;
+  filter: drop-shadow(0 0 18px rgba(255, 224, 153, 0.9));
+}
+
+h1, h2, p, #countdown span {
+  color: #542d70;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 2.8em;
+  text-shadow: 2px 2px 5px rgba(255,255,255,0.8);
+}
+
+h2 {
+  font-size: 2em;
+  color: #713b8e;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.7;
+}
+
+/* Countdown */
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 2.2em;
+  margin: 30px auto 0;
+  flex-wrap: wrap;
+}
+
+#countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 85px;
+  padding: 14px 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.65);
+  border: 2px solid #e7bd69;
+  box-shadow: 0 4px 12px rgba(84,45,112,0.12);
+}
+
+#countdown span:first-child {
+  font-weight: bold;
+  color: #713b8e;
+}
+
+#countdown span:last-child {
+  font-size: 0.48em;
+  margin-top: 5px;
+}
+
+/* Sections */
+section {
+  padding: 35px 20px;
+}
+
+/* Invitation box */
+.highlight-box {
+  background: rgba(255,255,255,0.82);
+  padding: 30px 25px;
+  border-radius: 25px;
+  max-width: 650px;
+  margin: 25px auto 40px;
+  border: 3px solid #e7bd69;
+  box-shadow: 0 6px 20px rgba(84,45,112,0.15);
+}
+
+.highlight-box p {
+  font-size: 1.25em;
+  margin: 12px 0;
+}
+
+/* Location */
+.location-box {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.45);
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.7);
+}
+
+iframe {
+  margin-top: 20px;
+  border-radius: 18px;
+  border: 3px solid #e7bd69;
+  width: 100%;
+  max-width: 550px;
+  height: 320px;
+}
+
+/* Gallery */
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 25px auto;
+  padding: 0 12px;
+}
+
+.gallery {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 12px 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery img {
+  flex: 0 0 180px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid #fff0d6;
+  box-shadow: 0 5px 15px rgba(84,45,112,0.22);
+  scroll-snap-align: center;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+.gallery-arrow {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #713b8e;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.gallery-arrow:hover {
+  background: #e0b85c;
+}
+
+@media (max-width: 600px) {
+  .gallery-wrapper {
+    gap: 5px;
+    padding: 0 5px;
+  }
+
+  .gallery img {
+    flex-basis: 135px;
+    width: 135px;
+    height: 135px;
+  }
+
+  .gallery-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* Footer */
+footer {
+  padding: 30px 20px;
+  margin-top: 10px;
+}
+
+footer p {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #fff8e8;
+  text-shadow: 2px 2px 5px #542d70;
+}
+
+/* Contact */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0 35px;
+  flex-wrap: wrap;
+}
+
+.contact-icons a {
+  color: #713b8e;
+  font-size: 2.2em;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+  color: #e7bd69;
+}
+
+/* Falling magical stars */
+.sparkle {
+  position: fixed;
+  top: -30px;
+  color: #fff8d8;
+  font-size: 1.5em;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10;
+  animation: fall linear infinite;
+  text-shadow: 0 0 8px #e7bd69;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Lantern decorations */
+.lantern {
+  position: absolute;
+  font-size: 2.3em;
+  opacity: 0.85;
+  animation: glow 2.5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.lantern-left {
+  left: 5%;
+  top: 25px;
+}
+
+.lantern-right {
+  right: 5%;
+  top: 80px;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 3px #ffd76a);
+    transform: translateY(0);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #ffd76a);
+    transform: translateY(-8px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    padding: 65px 15px 30px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  p {
+    font-size: 1.05em;
+  }
+
+  #countdown {
+    font-size: 1.2rem;
+    gap: 9px;
+  }
+
+  #countdown div {
+    min-width: 68px;
+    padding: 10px 7px;
+  }
+
+  .highlight-box {
+    padding: 22px 15px;
+    margin: 20px 15px 30px;
+  }
+
+  .highlight-box p {
+    font-size: 1.05em;
+  }
+
+  .gallery {
+    gap: 15px;
+  }
+
+  .gallery img:first-child,
+  .gallery img:nth-child(2) {
+    width: 100%;
+    max-width: none;
+  }
+
+  iframe {
+    height: 280px;
+  }
+
+  footer p {
+    font-size: 1.25em;
+  }
+
+  .lantern {
+    font-size: 1.7em;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="lantern lantern-left">🏮</div>
+  <div class="lantern lantern-right">🏮</div>
+
+  <img src="rapunzel.jpg" alt="Η Ραπουνζέλ και ο μαγικός της κόσμος">
+
+  <h1>Τα δεύτερα γενέθλια της Ελπινίκης</h1>
+
+  <div id="countdown"></div>
+
+</header>
+
+<section class="highlight-box">
+
+<p>Η μικρή Ελπινίκη γίνεται 2 χρονών! 🎂👑</p>
+
+<p>Σας προσκαλεί σε ένα μαγικό πάρτι με τη Ραπουνζέλ, στην παιδική χαρά όπου παίζει, γελά και περνά όμορφες στιγμές με τους φίλους της! 💜</p>
+
+<p>Ελάτε να γιορτάσουμε όλοι μαζί με παιχνίδια, γέλια και πολλή χαρά, σε ένα παραμυθένιο σκηνικό γεμάτο μαγεία! 🏮✨</p>
+
+<p>Σας περιμένουμε για μια αξέχαστη ημέρα! 💜</p>
+
+</section>
+
+<section>
+
+  <h2>Ημέρα & Ώρα</h2>
+
+  <div class="location-box">
+
+    <p><b>Κυριακή 22 Νοεμβρίου 2026, 11:00 π.μ.</b></p>
+
+    <h2>Adamo Cafe</h2>
+
+    <p>Πλατεία Γουέμπλεϋ</p>
+
+    <p>Παρασκευοπούλου και Γιάνναρη</p>
+
+    <iframe
+      src="https://www.google.com/maps?q=Adamo%20Cafe%2C%20Platia%20Wembley%2C%20Paraskeuopoulou%20kai%20Giannari%2C%20Athens&output=embed"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Χάρτης για το Adamo Cafe">
+    </iframe>
+
+    <p>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Adamo+Cafe+Platia+Wembley+Athens"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="color:#713b8e;font-weight:bold;">
+        <i class="fas fa-map-marker-alt"></i>
+        Άνοιγμα οδηγιών στο Google Maps
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
+<section>
+  <h2>Η μικρή μας πρωταγωνίστρια 💜</h2>
+
+  <div class="gallery-wrapper">
+    <button class="gallery-arrow" onclick="moveGallery(-1)" aria-label="Προηγούμενες φωτογραφίες">
+      &#10094;
+    </button>
+
+    <div class="gallery" id="photoGallery">
+      <img src="elpiniki1.jpeg" alt="Ελπινίκη 1">
+      <img src="elpiniki2.jpeg" alt="Ελπινίκη 2">
+      <img src="elpiniki3.jpeg" alt="Ελπινίκη 3">
+      <img src="elpiniki4.jpeg" alt="Ελπινίκη 4">
+      <img src="elpiniki5.jpeg" alt="Ελπινίκη 5">
+      <img src="elpiniki6.jpeg" alt="Ελπινίκη 6">
+      <img src="elpiniki7.jpeg" alt="Ελπινίκη 7">
+      <img src="elpiniki8.jpeg" alt="Ελπινίκη 8">
+      <img src="elpiniki9.jpeg" alt="Ελπινίκη 9">
+    </div>
+
+    <button class="gallery-arrow" onclick="moveGallery(1)" aria-label="Επόμενες φωτογραφίες">
+      &#10095;
+    </button>
+  </div>
+</section>
+
+<footer>
+
+  <p>Με αγάπη, η οικογένεια και οι φίλοι της Ελπινίκης! 💜🏮✨</p>
+
+</footer>
+
+<section>
+
+  <h2>Επικοινωνία</h2>
+
+  <div class="contact-icons">
+
+  <a href="tel:+306982267310" title="Τηλέφωνο">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <a href="mailto:robert_22_man@yahoo.gr" title="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <a href="https://www.facebook.com/robert.drako"
+     target="_blank" rel="noopener noreferrer" title="Facebook">
+    <i class="fab fa-facebook"></i>
+  </a>
+
+  <a href="https://www.instagram.com/drakorobert/"
+     target="_blank" rel="noopener noreferrer" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://m.me/robert.drako"
+     target="_blank" rel="noopener noreferrer" title="Messenger">
+    <i class="fab fa-facebook-messenger"></i>
+  </a>
+
+  <a href="viber://chat?number=%2B306982267310" title="Viber">
+    <i class="fab fa-viber"></i>
+  </a>
+
+</div>
+
+</section>
+
+<!-- Μαγικά αστεράκια -->
+<div class="sparkle" style="left:12%;animation-duration:14s;">✦</div>
+<div class="sparkle" style="left:28%;animation-duration:18s;font-size:2em;">✧</div>
+<div class="sparkle" style="left:45%;animation-duration:20s;">✦</div>
+<div class="sparkle" style="left:60%;animation-duration:22s;font-size:1.2em;">✧</div>
+<div class="sparkle" style="left:78%;animation-duration:17s;font-size:1.8em;">✦</div>
+<div class="sparkle" style="left:92%;animation-duration:25s;">✧</div>
+
+<script>
+
+const eventDate = new Date('2026-11-22T11:00:00');
+
+function updateCountdown() {
+
+  const now = new Date();
+  const diff = eventDate - now;
+  const countdown = document.getElementById('countdown');
+
+  if (diff <= 0) {
+    countdown.textContent = 'Το πάρτι ξεκίνησε! 🎉💜';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  const numbers = [days, hours, minutes, seconds];
+
+  const labels = [
+    'ημέρες',
+    'ώρες',
+    'λεπτά',
+    'δευτερόλεπτα'
+  ];
+
+  let html = '';
+
+  for (let i = 0; i < 4; i++) {
+
+    html += `
+      <div>
+        <span>${numbers[i]}</span>
+        <span>${labels[i]}</span>
+      </div>
+    `;
+
+  }
+
+  countdown.innerHTML = html;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+function moveGallery(direction) {
+  const gallery = document.getElementById('photoGallery');
+
+  gallery.scrollBy({
+    left: direction * gallery.clientWidth * 0.8,
+    behavior: 'smooth'
+  });
+}
+
+</script>
+
+</body>
+</html>
